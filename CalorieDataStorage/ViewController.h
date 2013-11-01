@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StorageCalorie.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITextFieldDelegate>
 
 
 

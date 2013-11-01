@@ -36,6 +36,8 @@ sqlite3* db;
 {
     [super viewDidLoad];
     
+    calorieTitle.delegate = self;
+    
 
     //DBファイルのパス
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
