@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface StorageCarorie : UIViewController
+
+
 @property (strong, nonatomic) IBOutlet UITextField *calorieTitle;
 @property (strong, nonatomic) IBOutlet UITextField *calorieCal;
 @property (strong, nonatomic) IBOutlet UITextField *calorieNum;
+
+- (IBAction)calorieSave:(id)sender;
+
 
 @end
