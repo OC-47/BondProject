@@ -33,18 +33,11 @@ sqlite3* db;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    
-
-    
     
 }
 
 
 - (IBAction)exerciseSave:(id)sender {
-    
-    
-    
     
     
     NSString *exercise_title = self.exerciseTitle.text;
