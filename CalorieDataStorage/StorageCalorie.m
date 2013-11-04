@@ -38,30 +38,6 @@ sqlite3* db;
     
     calorieTitle.delegate = self;
     
-
-    //DBファイルのパス
-    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
-    NSString *dir   = [paths objectAtIndex:0];
-    
-    //DBファイルがあるかどうか確認
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-
-
-
-
-    if (![fileManager fileExistsAtPath:[dir stringByAppendingPathComponent:@"calorie_data.db"]])
-    {
-        //なければ新規作成
-        FMDatabase *db= [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"calorie_data.db"]];
-        
-        NSString *sql = @"CREATE TABLE calorie_data (id INTEGER PRIMARY KEY AUTOINCREMENT,calorie_title TEXT,calorie_cal INTEGER,calorie_num INTEGER,date TEXT);";
-        
-        [db open]; //DB開く
-        [db executeUpdate:sql]; //SQL実行
-        [db close];
-    }
-
-
 }
 
 
@@ -73,7 +49,7 @@ sqlite3* db;
     float calorie_cal_f = [self.calorieCal.text floatValue];
     NSNumber *calorie_cal = [NSNumber numberWithFloat:calorie_cal_f];
     
-    float calorie_num_f = [self.calorieCal.text floatValue];
+    float calorie_num_f = [self.calorieNum.text floatValue];
     NSNumber *calorie_num = [NSNumber numberWithFloat:calorie_num_f];
     
 
@@ -84,9 +60,9 @@ sqlite3* db;
 
     
     
-    if ([fileManager fileExistsAtPath:[dir stringByAppendingPathComponent:@"calorie_data.db"]])
+    if ([fileManager fileExistsAtPath:[dir stringByAppendingPathComponent:@"diet.db"]])
     {
-        FMDatabase *db= [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"calorie_data.db"]];
+        FMDatabase *db= [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"diet.db"]];
         
         [db open]; //DB開く
         
