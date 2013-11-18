@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "StorageCalorie.h"
+#import "FMDatabase.h"
 
 @interface ViewController : UIViewController <UITextFieldDelegate>
 
